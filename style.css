@@ -91,7 +91,7 @@
     main{
       margin-top: 140px;
       padding-bottom: 25px;
-      text-align: center;
+      text-align: left;
 	  background-color: #e8f5e9; /* Gris molt clar */
 	min-height: 500px; /* afegeix açò */
     }
