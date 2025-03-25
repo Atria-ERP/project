@@ -1,0 +1,118 @@
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background-color: #004d5c; /* blau petroli */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      text-align: center;
+    }
+	#menu-bar{
+	  position: fixed;
+	  top: 100px;
+	  left: 0;
+	  right: 0;
+      height: 40px;
+ 	  margin: 0;
+	  padding: 0 15px;
+      display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  background-color: #206d7c; /* blau petroli */
+	  z-index: 1000;
+
+	}
+	#menu-bar ul {
+	  list-style: none;
+	  display: flex;
+	  gap: 15px;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	#menu-left li {
+	  display: flex;
+	  align-items: center;
+
+	}
+	#menu-left li a{	  
+	  color: white;
+	  text-decoration: none;
+	  padding: 5px 5px;
+	  border-radius: 10px;
+	  transition: background-color 0.2s, color 0.2s;
+	}
+	#menu-left li a:hover{	  
+	  background-color: white;
+	  color: #206d7c;
+	  text-decoration: none;
+	}
+	#menu-right li a {
+		border: none;
+		border-radius: 15px;
+		padding: 2px 8px;
+		cursor: pointer;
+		background-color: white;
+		color: #206d7c;
+		text-decoration: none;
+		font-size: 0.750rem !important;
+	}
+    #menu-right li a:hover{
+		background-color: #004d5c;
+		transition: background-color 0.2s, color 0.2s;
+		color: white;
+	}
+	footer {
+	  position: fixed;
+	  bottom: 0;
+	  left: 0;
+      right: 0;
+      height: 25px;
+      background-color: #004d5c;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+      z-index: 1000;
+    }
+
+    main{
+      margin-top: 140px;
+      padding-bottom: 25px;
+      text-align: center;
+	  background-color: #e8f5e9; /* Gris molt clar */
+	min-height: 500px; /* afegeix açò */
+    }
+	.content-box {
+		width: 80%;
+		max-width: 600px;
+		padding: 20px;
+		background-color: white;
+		border-radius: 15px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		margin: 20px auto;
+		/* La alçada serà dinàmica depenent del contingut */
+	}
+
+	.content-box h2 {
+		margin-top: 0;
+	}
+	.content-box p {
+		margin-bottom: 0;
+	}
+
+html {
+  scroll-padding-top: 140px;
+}

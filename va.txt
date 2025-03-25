@@ -1,0 +1,103 @@
+##Introducció
+La informàtica ha evolucionat ràpidament en les darreres dècades. Hem passat dels mainframes als ordinadors personals, i d’aquests al web i als serveis en el núvol.
+Tot i aquests avanços tecnològics, el model de desenvolupament del programari de gestió encara arrossega conceptes de fa més de seixanta anys.
+
+Encara gestionem les dades com a valors aïllats, sense considerar-ne el context ni les relacions. Els sistemes actuals han millorat en arquitectura i escalabilitat,
+però continuen sent rígids i inflexibles. Seguim tractant la informació com en el passat, sense aprofitar realment la flexibilitat que ofereixen les tecnologies modernes.
+
+Atria-ERP naix per repensar aquest model. No és un ERP convencional més, sinó una nova forma d’enfocar la gestió de dades, pensada per a la realitat actual.
+La seua estructura redefineix com organitzem i processem la informació, evitant les limitacions dels sistemes tradicionals.
+
+Aquest projecte no pretén només fer que el programari funcione, sinó que siga realment funcional i eficient, eliminant complexitat innecessària i optimitzant els recursos.
+
+##Atria-ERP
+Els sistemes ERP tradicionals defineixen processos de negoci, establint normes i fluxos de treball.
+Atria-ERP fa una aproximació diferent: en lloc de definir processos, descriu cada dada i el seu entorn.
+
+Atria-ERP no es basa en processos de negoci predefinits, sinó que se centra en la gestió estructural de les dades.
+Cada dada té un valor, una estructura i un lloc per a la persistència. Aquesta combinació forma una entitat.
+En Atria-ERP, una entitat s’entén com la unitat funcional mínima d’informació.
+
+Un conjunt d’entitats forma un document, una estructura conceptual que pot materialitzar-se en diferents formats o formes.
+Els documents no són simples contenidors de dades, sinó estructures dinàmiques que organitzen i relacionen la informació.
+
+La manera com les entitats operen i interaccionen determina de forma natural la lògica de negoci.
+Això vol dir que, en modificar una entitat, la lògica de negoci s’adapta automàticament.
+
+Per fer viable aquest model, la informació es divideix en quatre fluxos diferenciats:
+
+Estructures
+
+Valors
+
+Perifèrics
+
+Serveis Externs
+
+Cada flux funciona de manera separada i independent, complint una funció concreta.
+Cada flux es gestiona en tres capes, ja que és l’estructura física que ofereixen els sistemes moderns.
+
+En Atria-ERP, la capa intermèdia ja no és la capa de negoci, sinó una capa constructora que genera les estructures funcionals necessàries per a la capa de persistència i la IU.
+
+Aquest model elimina les rigideses tradicionals i treballa amb un paradigma on la informació es converteix en l’eix central de l’operació.
+En lloc de construir el programari al voltant d’un conjunt de normes fixes, Atria-ERP es dissenya amb una adaptabilitat que naix directament de les dades i les seues relacions.
+
+##Atria-ERP ofereix
+Robustesa
+La robustesa d’Atria-ERP es basa en la seua capacitat d’adaptar-se als canvis sense dependre de normes ni processos predefinits.
+Això s’aconsegueix mitjançant:
+
+Estructures Dinàmiques: Les dades es gestionen segons la seua estructura i relacions, no segons normes fixes. Això redueix errors per programació rígida.
+
+Fluxos Separats de Dades: La informació es processa de manera independent (estructures, valors, perifèrics i serveis externs), evitant interferències i inconsistències.
+
+Adaptabilitat als Canvis: Com que la lògica de negoci naix de les dades i les seues relacions, el sistema pot adaptar-se sense reescriure codi ni redefinir processos.
+
+Exemple:
+Si canvia la forma de calcular descomptes, només cal modificar l’entitat “Descompte” sense afectar la resta del sistema.
+
+Modularitat
+Atria-ERP és modular per naturalesa, ja que cada entitat i document són components independents.
+Aquesta modularitat permet:
+
+Independència: Les entitats poden evolucionar sense afectar la resta del sistema.
+
+Facilitat de Manteniment: Es poden fer canvis localment sense reprogramar tot el sistema.
+
+Reutilització: Les entitats es poden reutilitzar en diferents contextos o documents.
+
+Exemple:
+Si cal afegir un nou tipus de descompte, es pot crear una nova entitat “Descompte” sense modificar les existents.
+
+Escalabilitat
+Atria-ERP està dissenyat per créixer i adaptar-se de manera natural, sense les limitacions dels sistemes tradicionals.
+Aquesta escalabilitat es reflecteix en:
+
+Expansió de Dades: El sistema pot gestionar grans volums de dades de manera eficient.
+
+Adaptabilitat a Nous Models de Negoci: Atria-ERP no està lligat a un model de negoci concret, per la qual cosa pot adaptar-se a necessitats diverses sense grans redissenys.
+
+Integració amb Altres Sistemes: Els fluxos independents faciliten la integració amb serveis o aplicacions externes.
+
+Exemple:
+Si una empresa s’expandeix a un nou mercat, Atria-ERP pot adaptar-se sense modificar la seua lògica central.
+
+Simplicitat
+La simplicitat d’Atria-ERP es basa en la gestió estructural de dades, eliminant la necessitat de regles explícites per a cada acció.
+Això s’aconsegueix mitjançant:
+
+Interfícies Dinàmiques: La interfície d’usuari es construeix automàticament a partir de l’estructura de les dades, evitant la programació manual.
+
+Fluxos de Treball Automàtics: Els fluxos naixen de les relacions entre les dades, eliminant la necessitat de definicions manuals.
+
+Complexitat Reduïda: En lloc de sobrecarregar el sistema amb normes i configuracions, Atria-ERP permet que siga la informació la que determine el seu comportament.
+
+Exemple:
+Si es necessita un nou formulari, només cal definir les entitats que el componen, i la interfície es genera automàticament.
+
+Conclusió
+Atria-ERP aporta una nova manera de pensar la gestió de la informació i els sistemes ERP.
+En lloc de basar-se en normes i processos rígids, es fonamenta en l’estructura i les relacions de les dades, permetent que la lògica de negoci sorgisca de manera natural.
+
+Aquest enfocament és especialment útil en un món on els negocis canvien ràpidament i necessiten sistemes que s’adapten sense grans inversions de temps ni recursos.
+Atria-ERP no és només una eina, sinó una nova filosofia per gestionar la informació.

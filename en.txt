@@ -1,0 +1,91 @@
+##Introduction
+Computing has evolved rapidly in recent decades. We have moved from mainframes to personal computers, and from these to the web and cloud services. 
+Despite these technological advances, the development model for management software still carries concepts from over sixty years ago.
+
+We still manage data as isolated values, without considering their context and relationships. Current systems have improved in architecture and scalability, 
+but they remain rigid and inflexible. We continue to handle information as in the past, without truly leveraging the flexibility modern technologies offer.
+
+Atria-ERP emerges to rethink this model. It is not just another conventional ERP, but a new approach to data management, designed for today’s reality.
+Its structure redefines how we organize and process information, avoiding the limitations of traditional systems.
+
+This project does not aim to simply make the software work, but to make it truly functional and efficient, eliminating unnecessary complexity and optimizing resource usage.
+
+##Atria-ERP
+Traditional ERP systems define business processes, setting rules and workflows. 
+Atria-ERP takes a different approach: instead of defining processes, it describes each piece of data and its environment.
+
+Atria-ERP does not rely on predefined business processes but focuses on structural data management. 
+Each piece of data has a value, a structure, and a place for persistence. This combination forms an entity.
+In Atria-ERP, an entity is understood as the minimum functional unit of information.
+
+A set of entities creates a document, a conceptual structure that can be materialized in different formats or forms. 
+Documents are not simple data containers but dynamic structures that organize and relate information.
+
+The way entities operate and interact naturally determines the business logic. 
+This means that modifying an entity automatically adapts the business logic.
+
+To make this model viable, information is divided into four distinct flows:  
+- Structures  
+- Values  
+- Peripherals  
+- External Services  
+
+Each flow works separately and independently, fulfilling its specific function.  
+Each flow is managed in three layers, as this is the physical structure offered by modern systems.
+
+In Atria-ERP, the intermediate layer is no longer a business layer but a constructor layer that builds the functional structures required by both the persistence layer and the UI.
+
+This model eliminates traditional rigidities and works with a paradigm where information becomes the central axis of operation. 
+Instead of building software around a set of fixed rules, Atria-ERP is designed with adaptability that emerges directly from the data and its relationships.
+
+## What Atria-ERP Offers
+Robustness
+Atria-ERP's robustness lies in its ability to adapt to changes without relying on predefined rules or processes.  
+This is achieved through:
+
+- Dynamic Structures: Data is managed according to its structure and relationships, not fixed rules. This reduces errors caused by rigid programming.
+- Separate Data Flows: Information is processed independently (structures, values, peripherals, and external services), avoiding interference and inconsistencies.
+- Adaptability to Changes: Since business logic emerges from the data and its relationships, the system can adjust without rewriting code or redefining processes.
+
+Example:  
+If the method of calculating discounts changes, it is only necessary to modify the "Discount" entity without affecting the rest of the system.
+
+Modularity
+Atria-ERP is modular by nature, as each entity and document are independent components.  
+This modularity provides:
+
+- Independence: Entities can evolve without affecting the rest of the system.
+- Ease of Maintenance: Changes can be made locally without the need to reprogram the entire system.
+- Reusability: Entities can be reused in different contexts or documents.
+
+Example:  
+If a new type of discount needs to be added, a new "Discount" entity can be created without modifying existing ones.
+
+ Scalability
+Atria-ERP is designed to grow and adapt naturally, without the limitations of traditional systems.  
+This scalability is reflected in:
+
+- Data Expansion: The system can handle large volumes of data efficiently.
+- Adaptability to New Business Models: Atria-ERP is not tied to a specific business model, allowing it to adapt to different needs without requiring major redesigns.
+- Integration with Other Systems: The independent flows make integration with external services or applications easier.
+
+Example:  
+If a company expands its operations to a new market, Atria-ERP can adapt without modifying its core logic.
+
+ Simplicity
+Atria-ERP's simplicity is based on structural data management, eliminating the need for explicit rules for each action.  
+This is achieved through:
+
+- Dynamic Interfaces: The user interface is automatically built from the data structure, avoiding the need for manual interface programming.
+- Automatic Workflows: Workflows emerge from the relationships between data, eliminating the need for manual definitions.
+- Reduced Complexity: Instead of overloading the system with rules and configurations, Atria-ERP allows information to determine its own behavior.
+
+Example:  
+If a new form is needed, it is only necessary to define the entities that compose it, and the interface is automatically generated.
+
+## Conclusion
+Atria-ERP brings a new way of thinking about information management and ERP systems.  
+Instead of relying on rigid rules and processes, it is based on the structure and relationships of the data, allowing business logic to emerge naturally.
+
+This approach is especially useful in a world where businesses change rapidly and need systems that can adapt without large investments in time or resources.  
+Atria-ERP is not just a tool, but a new philosophy for managing information.
