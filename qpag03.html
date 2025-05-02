@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>IA y Relacional · Atria-ERP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f0f4ff;
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+
+    .contenidor-general {
+      transition: transform 0.3s ease;
+    }
+
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      background: url("img/pag03_bn.png") no-repeat center right;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 5%;
+    }
+
+    .hero-banner h1 {
+      color: #060F7f;
+      font-size: 2.8rem;
+      margin-bottom: 2px;
+      text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-banner button {
+      background-color: #060F7f;
+      color: white;
+      border: none;
+      padding: 4px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 999px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .hero-banner button:hover {
+      background-color: #1e40af;
+      transform: scale(1.04);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+      z-index: 1000;
+    }
+
+    .nav-icons {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 16px;
+      font-size: 1.8rem;
+    }
+
+    .nav-icons a {
+      color: #060F7f;
+      text-decoration: none;
+    }
+
+    .nav-icons a:hover {
+      color: #1e40af;
+    }
+
+    .contenidor {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .contenidor p {
+      font-size: 1.1rem;
+      margin-bottom: 1.4em;
+      line-height: 1.6;
+    }
+
+	.bloc {
+	  position: relative;
+	  max-width: 800px;
+	  width: 100%;
+	  margin: 0 auto;
+	}
+
+	.bloc img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	}
+
+	.bloc-text {
+	  position: absolute;
+	  top: 0%;
+	  left: 30%;
+	  max-width: 80%;
+	  background: rgba(255, 255, 255, 0.7);
+	  padding: 11px;
+	  border-radius: 10px;
+	  overflow-wrap: break-word;
+	  box-sizing: border-box;
+	}
+
+	.seccio-peu {
+	  background-color: #000;
+	  color: #fff;
+	  text-align: center;
+	  padding: 20px 40px;
+	  font-size: 1rem;
+	}
+	.seccio-peu p {
+	  margin: 4px 0;
+	  font-size: 1.1rem;
+	  font-weight: 500;
+	  letter-spacing: 0.5px;
+	}
+
+  </style>
+</head>
+<body>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="barra barra1"></div>
+    <div class="barra barra2"></div>
+    <div class="barra barra3"></div>
+  </div>
+
+  <div id="menu-container"></div>
+ 
+  <div class="contenidor-general" id="contenidorGeneral">
+    <section class="hero-banner">
+      <img src="img/logo.png" alt="Logo Atria" class="logo">
+      <h1>La IA y el Modelo Relacional</h1>
+      <p>La IA se integra de forma nativa en modelos estructurados y relacionales.</p>
+      <button onclick="obrirPitch()">Ver infografía</button>
+      <div class="nav-icons">
+        <a href="qpag02.html" title="Anterior"><i class="bi bi-arrow-left-circle"></i></a>
+        <a href="index.html" title="Inicio"><i class="bi bi-house"></i></a>
+        <a href="qpag04.html" title="Siguiente"><i class="bi bi-arrow-right-circle"></i></a>
+      </div>
+    </section>
+
+    <div class="contenidor">
+      <p>La inteligencia artificial trabaja de forma más eficiente cuando dispone de un entorno donde la información está estructurada y las relaciones son declaradas. Esto le permite interpretar los datos correctamente, construir nuevas estructuras basadas en patrones observados y adaptar la organización de la información a las necesidades reales, asegurando una evolución precisa y controlada del sistema.</p>
+
+	  <div class="bloc">
+		<img src="img/pag03_b1b.png">
+	    <div class="bloc-text">
+		   <p><strong>Estructura disponible, máxima eficiencia </strong>La inteligencia artificial, gracias al repositorio estructurado, sabe desde el primer momento cómo debe organizar la información. Esto elimina interpretaciones y multiplica su eficiencia.</p>
+		   <p><strong>Creación de la estructura de gestión </strong>Con el repositorio como base, la IA puede construir toda la estructura funcional de la base de datos de gestión: documentos, entidades, relaciones y dependencias.</p>
+           <p><strong>Evolución proactiva del sistema </strong>La IA analiza el uso real, detecta nuevas necesidades y amplía la estructura para absorber nuevos escenarios, adaptando el sistema sin limitar la actividad, sino potenciándola.</p>
+		</div>
+	  </div>	
+	  
+    </div>
+	<section class="seccio-peu"><p>© Atria-ERP 2025 · Versió 1.0.0 · Arquitectura Relacional</p></section> 
+</div>
+
+  <script>
+    function obrirPitch() {
+      alert("Aquí irá la infografía. Todavía no está disponible.");
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".col").forEach(col => observer.observe(col));
+  </script>
+ <script src="menu.js"></script>
+
+</body>
+</html>

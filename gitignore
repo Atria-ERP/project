@@ -1,0 +1,11 @@
+# Ignora fitxers temporals
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Ignora directoris comuns
+node_modules/
+dist/
+.cache/

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Qué es Atria-ERP Relational?</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+  <style>
+     * {
+      box-sizing: border-box;
+    }
+
+    html,body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f0f4ff;
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+
+    .contenidor-general {
+      transition: transform 0.3s ease;
+    }
+
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      background: url("img/pag01_bn.png") no-repeat center right;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 5%;
+    }
+
+    .hero-banner h1 {
+      color: #060F7f;
+      font-size: 2.8rem;
+      margin-bottom: 2px;
+      text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+    }
+
+	.hero-banner button {
+	  background-color: #060F7f;
+	  color: white;
+	  border: none;
+	  padding: 4px 20px;
+	  font-size: 0.9rem;
+	  font-weight: 600;
+	  border-radius: 999px;
+	  cursor: pointer;
+	  text-transform: uppercase;
+	  letter-spacing: 0.5px;
+	  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+	  transition: all 0.2s ease;
+	}
+
+	.hero-banner button:hover {
+	  background-color: #1e40af;
+	  transform: scale(1.04);
+	  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+	}
+
+
+    .hero-banner button:hover {
+      background-color: #1e40af;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+      z-index: 1000;
+    }
+
+    .nav-icons {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 16px;
+      font-size: 1.8rem;
+    }
+
+    .nav-icons a {
+      color: #060F7f;
+      text-decoration: none;
+    }
+
+    .nav-icons a:hover {
+      color: #1e40af;
+    }
+
+	.nav-icons .desactivado{
+	   opacity: 0,3;
+	   pointer-events: none;
+	   cursor: default;
+	}
+	
+    .contenidor {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .contenidor p {
+      font-size: 1.1rem;
+      margin-bottom: 1.4em;
+      line-height: 1.6;
+    }
+
+    .tres-columnes {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .col {
+      background-color: #f5f9ff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      border-top: 5px solid #1e40af;
+      min-height: 320px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .col.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .col h3 {
+      color: #060F7f;
+      margin-bottom: 12px;
+    }
+
+    .etiqueta {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: #888;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .fluxos p {
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+	.seccio-peu {
+	  background-color: #000;
+	  color: #fff;
+	  text-align: center;
+	  padding: 20px 40px;
+	  font-size: 1rem;
+	}
+	.seccio-peu p {
+	  margin: 4px 0;
+	  font-size: 1.1rem;
+	  font-weight: 500;
+	  letter-spacing: 0.5px;
+	}
+
+  </style>
+</head>
+<body>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="barra barra1"></div>
+    <div class="barra barra2"></div>
+    <div class="barra barra3"></div>
+  </div>
+
+  <div id="menu-container"></div>
+
+  <div class="contenidor-general" id="contenidorGeneral">
+    <section class="hero-banner">
+      <img src="img/logo.png" alt="Logo Atria" class="logo">
+      <h1>¿Qué es Atria-ERP Relational?</h1>
+      <p>Un modelo estructural que refleja la realidad sin necesidad de codificación.</p>
+      <button onclick="obrirPitch()">Ver infografía</button>
+      <div class="nav-icons">
+        <a class="desactivado" href="#" onclick="return false" title="Anterior"><i class="bi bi-arrow-left-circle"></i></a>
+        <a href="index.html" title="Inicio"><i class="bi bi-house"></i></a>
+        <a href="qpag02.html" title="Siguiente"><i class="bi bi-arrow-right-circle"></i></a>
+      </div>
+    </section>
+
+    <div class="contenidor">
+      <p>Atria-ERP Relacional nace con la visión de construir un sistema estructural de la información basado en relaciones. Este modelo permite una gestión más modular, ágil y declarativa, separando estructura y contenido, y manteniendo la lógica distribuida a lo largo del sistema.</p>
+
+      <div class="tres-columnes" id="cols">
+        <div class="col">
+          <span class="etiqueta"></span>
+          <h3><i class="bi bi-diagram-3"></i> Arquitectura orientada a la estructura</h3>
+          <p>Los datos son combinaciones entre estructura y relación.</p>
+          <p>Diferenciar el origen de la información.</p>
+          <p>Independencia y autonomía de las capas.</p>
+          <ul>
+            <li>Información dinámica controlada.</li>
+            <li>Evita la reprogramación con el cambio de entorno.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <span class="etiqueta"></span>
+          <h3><i class="bi bi-funnel"></i> Gestión por flujos especializados</h3>
+          <div class="fluxos">
+            <p><strong>Flujo de Estructuras:</strong><br>describe la forma.</p>
+            <p><strong>Flujo de Datos:</strong><br>mueve y valida los valores.</p>
+            <p><strong>Flujo de Periféricos:</strong><br>gestiona conexiones físicas.</p>
+            <p><strong>Flujo de Servicios Externos:</strong><br>conecta con sistemas externos.</p>
+          </div>
+        </div>
+        <div class="col">
+          <span class="etiqueta"></span>
+          <h3><i class="bi bi-grid-1x2"></i> Gestión Relacional: la propuesta técnica</h3>
+          <p>La información se describe, se estructura.</p>
+          <p>Optimiza las capas.</p>
+          <p>Totalmente Relacional.</p>
+          <p>Adaptable sin reajustar código.</p>
+        </div>
+      </div>
+
+     </div>
+	<section class="seccio-peu"><p>© Atria-ERP 2025 · Versió 1.0.0 · Arquitectura Relacional</p></section>  </div>
+
+  <script>
+    function obrirPitch() {
+      alert("Aquí irá la infografía. Todavía no está disponible.");
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".col").forEach(col => observer.observe(col));
+  </script>
+  <script src="menu.js"></script>
+</body>
+</html>

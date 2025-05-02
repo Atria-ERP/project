@@ -1,0 +1,93 @@
+/* menu.css */
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -240px;
+  width: 240px;
+  height: 100%;
+  background-color: #f0f4f8;
+  color: #1a1a1a;
+  padding: 60px 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  overflow-x: hidden;
+  z-index: 1000;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral ul li {
+  margin-bottom: 14px;
+}
+
+.menu-lateral ul li a {
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 1rem;
+  display: block;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+	.menu-lateral ul li ul {
+	  padding-left: 15px;
+	  margin-top: 4px;
+	  margin-bottom: 4px;
+	}
+
+	.menu-lateral ul li ul li {
+	  margin: 2px 0;
+	}
+
+	.menu-lateral ul li ul li a {
+	  font-size: 0.95rem;
+	  padding: 4px 0;
+	}
+
+	.menu-lateral ul li a:hover {
+	  color: #1e40af;
+	}
+
+	.menu-lateral ul li ul li a:hover {
+	  background-color: #e0e7ff;
+	  color: #1e40af;
+	  border-radius: 6px;
+	  padding-left: 5px;
+	}
+	/* Cuando el menú está abierto */
+	.menu-obert #menuLateral {
+	  left: 0;
+	}
+
+	/* Botón hamburguesa (por si también lo quieres mover aquí) */
+	.menu-toggle {
+	  position: fixed;
+	  top: 20px;
+	  left: 20px;
+	  z-index: 1001;
+	  cursor: pointer;
+	  width: 30px;
+	  height: 24px;
+	}
+
+	.menu-toggle .barra {
+	  height: 4px;
+	  background-color: #060F7f;
+	  margin: 4px 0;
+	  transition: all 0.3s ease;
+	}
+
+	.menu-toggle .barra1 { width: 100%; }
+	.menu-toggle .barra2 { width: 60%; margin-left: auto; }
+	.menu-toggle .barra3 { width: 40%; margin-left: auto; }
+
+	/* Empuja el contenido cuando el menú está abierto */
+	.menu-obert #contenidorGeneral {
+	  transform: translateX(240px);
+	  transition: transform 0.3s ease;
+	}

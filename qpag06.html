@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Arquitectura y Diseño · Atria-ERP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f0f4ff;
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+    .contenidor-general { transition: transform 0.3s ease; }
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      background: url("img/pag06_bn.png") no-repeat center right;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 5%;
+    }
+    .hero-banner h1 {
+      color: #060F7f;
+      font-size: 2.8rem;
+      margin-bottom: 2px;
+      text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+    }
+    .hero-banner button {
+      background-color: #060F7f;
+      color: white;
+      border: none;
+      padding: 4px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 999px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+    }
+    .hero-banner button:hover {
+      background-color: #1e40af;
+      transform: scale(1.04);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+      z-index: 1000;
+    }
+    .nav-icons {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 16px;
+      font-size: 1.8rem;
+    }
+    .nav-icons a {
+      color: #060F7f;
+      text-decoration: none;
+    }
+    .nav-icons a:hover {
+      color: #1e40af;
+    }
+    .contenidor {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .contenidor p {
+      font-size: 1.1rem;
+      margin-bottom: 1.4em;
+      line-height: 1.6;
+    }
+    .regles-layout {
+      display: flex;
+      gap: 20px;
+    }
+    .regles-llista {
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #ffffff;
+	}
+  
+    .regles-llista div {
+      background: #fff;
+      padding: 12px;
+      border-left: 4px solid #1d3557;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+.llibreta {
+  position: relative;
+  width: 700px; /* o ajustat a la teua imatge */
+  margin: auto;
+}
+
+.fons-llibreta {
+  width: 100%;
+  display: block;
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  }
+
+.text-llibreta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 45px 50px 50px 120px;   line-height: 2.4em;  /* pots jugar amb això per fer coincidir línies */
+  font-family: 'Courier New', monospace;
+	font-weight: bold;
+	font-size: 1.1rem;
+  color: #222;
+  pointer-events: none;
+}
+.regles-llista .vista {
+  background-color: #e0ecff;
+  border-left: 4px solid #060F7f;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+    .seccio-peu {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px 40px;
+      font-size: 1rem;
+    }
+    .seccio-peu p {
+      margin: 4px 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="barra barra1"></div>
+    <div class="barra barra2"></div>
+    <div class="barra barra3"></div>
+  </div>
+
+  <div id="menu-container"></div>
+  <script>
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(html => {
+        const cont = document.getElementById("menu-container");
+        cont.innerHTML = html;
+      });
+  </script>
+
+  <div class="contenidor-general" id="contenidorGeneral">
+    <section class="hero-banner">
+      <img src="img/logo.png" alt="Logo Atria" class="logo">
+      <h1>Las 12+1 reglas de Codd</h1>
+      <p>El cumplimiento de las reglas de Codd certificant un modelo relacional</p>
+      <button onclick="obrirPitch()">Ver infografía</button>
+      <div class="nav-icons">
+        <a href="qpag01.html" title="Anterior"><i class="bi bi-arrow-left-circle"></i></a>
+        <a href="index.html" title="Inicio"><i class="bi bi-house"></i></a>
+        <a href="#" title="Siguiente"><i class="bi bi-arrow-right-circle"></i></a>
+      </div>
+    </section>
+
+    <div class="contenidor">
+      <p>Atria-ERP Relacional funciona bajo un modelo de petición–respuesta. Cada acción es independiente y autónoma, ejecutada a partir de las estructuras y valores. No mantiene sesiones activas de usuario ni estado en memoria para gestionar el contexto.</p>
+
+      <div class="regles-layout">
+        <div class="regles-llista">
+		  <div data-id="0"><i class="bi bi-lightbulb"></i> 0. Fundación</div>
+		  <div data-id="1"><i class="bi bi-table"></i> 1. Representación</div>
+		  <div data-id="2"><i class="bi bi-unlock"></i> 2. Acceso garantizado</div>
+		  <div data-id="3"><i class="bi bi-slash-circle"></i> 3. Valores nulos</div>
+		  <div data-id="4"><i class="bi bi-gear"></i> 4. Catálogo relacional</div>
+		  <div data-id="5"><i class="bi bi-code-slash"></i> 5. Sublenguaje completo</div>
+		  <div data-id="6"><i class="bi bi-pencil-square"></i> 6. Vistas actualizables</div>
+		  <div data-id="7"><i class="bi bi-collection"></i> 7. Operaciones en conjunto</div>
+		  <div data-id="8"><i class="bi bi-diagram-3"></i> 8. Independencia lógica</div>
+		  <div data-id="9"><i class="bi bi-hdd-network"></i> 9. Independencia física</div>
+		  <div data-id="10"><i class="bi bi-shield-lock"></i> 10. No subversión</div>
+		  <div data-id="11"><i class="bi bi-cloud-arrow-up"></i> 11. Independencia de distribución</div>
+		  <div data-id="12"><i class="bi bi-check2-circle"></i> 12. Integridad estructural</div>
+        </div>
+<div class="llibreta">
+  <img src="img/llibreta.png" alt="Llibreta" class="fons-llibreta">
+  <div class="text-llibreta">
+    <h2><i class="bi bi-lightbulb"></i> 0. Fundación</h2>
+	<p>Un sistema que pretende ser relacional debe gestionar sus datos exclusivamente mediante sus capacidades relacionales.</p>
+    <p>Es decir, si afirma ser relacional, debe utilizar únicamente el modelo relacional para representar y operar con los datos. No vale usar trucos o mecanismos ajenos al modelo.</P>
+    <p>Atria-ERP cumple plenamente esta regla. No depende de procesos ocultos, código encapsulado ni lógica externa. Todo el sistema se construye sobre flujos y estructuras declarativas que definen entidades, relaciones y documentos.</p>
+  </p>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <section class="seccio-peu">
+      <p>© Atria-ERP 2025 · Versió 1.0.0 · Arquitectura Relacional</p>
+    </section>
+  </div>
+
+  <script>
+    function obrirPitch() {
+      alert("Aquí irá la infografía. Todavía no está disponible.");
+    }
+
+    function toggleMenu() {
+      document.body.classList.toggle("menu-obert");
+    }
+
+const textos = [
+  {
+    icona: "bi-lightbulb",
+    titol: "0. Fundación",
+    parags: [
+      "Un sistema que pretende ser relacional debe gestionar sus datos exclusivamente mediante sus capacidades relacionales.",
+      "Es decir, si afirma ser relacional, debe utilizar únicamente el modelo relacional para representar y operar con los datos. No vale usar trucos o mecanismos ajenos al modelo.",
+      "Atria-ERP cumple plenamente esta regla. No depende de procesos ocultos, código encapsulado ni lógica externa. Todo el sistema se construye sobre flujos y estructuras declarativas que definen entidades, relaciones y documentos."
+    ]
+  },
+  {
+    icona: "bi-table",
+    titol: "1. Representación",
+    parags: [
+      "Todos los datos deben estar representados como valores en tablas.",
+      "Codd entiende que todo dato debe estar estructurado y localizado dentro de tablas relacionales, sin información oculta.",
+      "En Atria-ERP, los datos se representan como entidades dentro de documentos, que equivalen a las tablas. Cada entidad incluye su representación visual (formato, pestaña, edición) y la IU interpreta las estructuras, no se programa nada."
+    ]
+  },
+  {
+    icona: "bi-unlock",
+    titol: "2. Acceso garantizado",
+    parags: [
+      "Cada dato debe ser accesible indicando el nombre de la tabla, el valor de la clave primaria y el nombre de la columna.",
+      "Es decir, cualquier valor debe poder recuperarse directamente sin accesos ocultos ni recorridos especiales. Todo debe ser accesible de forma uniforme y estructurada.",
+      "En Atria-ERP, cada valor es accesible a partir del documento, el ID y la entidad. Si hi ha càlcul, està declarat com a relació o derivació, no com a funció externa."
+    ]
+  },
+  {
+    icona: "bi-slash-circle",
+    titol: "3. Valores nulos",
+    parags: [
+      "Los valores nulos deben gestionarse de forma uniforme y sistemática.",
+      "Codd remarca que los valores desconocidos o inexistentes no deben tratarse como ceros o cadenas vacías.",
+      "En Atria-ERP, los valores nulos se gestionan por dominio y configuración. Puede haber valor por defecto, requerimiento de validación o dejarlo pendiente, según el contexto."
+    ]
+  },
+  {
+    icona: "bi-gear",
+    titol: "4. Catálogo relacional",
+    parags: [
+      "La estructura del sistema (metadatos) debe estar representada también en tablas accesibles con el mismo lenguaje.",
+      "Codd quiere que toda definición estructural sea consultable y no esté oculta en el código.",
+      "En Atria-ERP, todo está declarado como datos en el repositorio. Entidades, dominios, documentos y permisos son tablas accesibles. La IU solo interpreta estructuras."
+    ]
+  },
+  {
+    icona: "bi-code-slash",
+    titol: "5. Sublenguaje completo",
+    parags: [
+      "El sistema debe soportar al menos un lenguaje relacional completo.",
+      "Debe poder definir datos, manipularlos, controlar permisos y gestionar transacciones.",
+      "Atria-ERP usa SQL per a tot. No hace falta código para crear dominios, validaciones o formularios. La IU usa JS solo para interpretar."
+    ]
+  },
+  {
+    icona: "bi-pencil-square",
+    titol: "6. Vistas actualizables",
+    parags: [
+      "Las vistas que pueden ser teóricamente actualizadas, también deben serlo prácticamente.",
+      "Si se puede modificar, el sistema debe permitirlo.",
+      "Atria-ERP lo permite mediante pseudocombos y subformularios. Ej: editar dirección desde una factura."
+    ]
+  },
+  {
+    icona: "bi-collection",
+    titol: "7. Operaciones en conjunto",
+    parags: [
+      "Debe ser posible realizar estas operaciones sobre conjuntos de registros.",
+      "No debe hacerse fila por fila, sino como un conjunto estructurado.",
+      "Atria-ERP genera un script SQL completo para todas las entidades implicadas. Es una sola operación estructurada."
+    ]
+  },
+  {
+    icona: "bi-diagram-3",
+    titol: "8. Independencia lógica",
+    parags: [
+      "Cambios en la estructura lógica no deben afectar a las aplicaciones existentes.",
+      "Añadir un campo no debe romper nada.",
+      "En Atria-ERP, solo se añade una entidad al documento. La IU lo muestra según configuración. La persistencia es consecuencia."
+    ]
+  },
+  {
+    icona: "bi-hdd-network",
+    titol: "9. Independencia física",
+    parags: [
+      "Cambios en el almacenamiento físico no deben afectar la estructura lógica.",
+      "Ni índices ni motores deben afectar el funcionamiento.",
+      "Atria separa declaración y persistencia. Los cambios físicos no alteran lógica ni interfaz."
+    ]
+  },
+  {
+    icona: "bi-shield-lock",
+    titol: "10. No subversión",
+    parags: [
+      "Ningún nivel inferior debe poder evitar las reglas del modelo relacional.",
+      "Ningún acceso oculto o modificación externa debería ser posible.",
+      "Atria-ERP blinda las tablas. Todo pasa por el repositorio y por los flujos. Los permisos y estructuras lo controlan todo."
+    ]
+  },
+  {
+    icona: "bi-cloud-arrow-up",
+    titol: "11. Independencia de distribución",
+    parags: [
+      "Los usuarios no deben notar si los datos están distribuidos o centralizados.",
+      "La ubicación de los datos no debe afectar la experiencia.",
+      "Los flujos conectan con la BD según el contexto. El sistema no mantiene estado, y puede operar con BD locales o remotas."
+    ]
+  },
+  {
+    icona: "bi-check2-circle",
+    titol: "12. Integridad estructural",
+    parags: [
+      "Las restricciones de integridad deben estar definidas en el catálogo.",
+      "Todas las validaciones y normas deben estar dentro de la estructura declarada.",
+      "Las reglas de integridad se definen en los dominios y relaciones. Tanto la IU como la BD las aplican. No hay escapatoria."
+    ]
+  }
+];
+
+// Codi dinàmic per a mostrar les regles
+const llista = document.querySelectorAll('.regles-llista div');
+const contenidor = document.querySelector('.text-llibreta');
+
+llista.forEach(el => {
+  el.addEventListener('click', () => {
+    const id = parseInt(el.dataset.id);
+    const regla = textos[id];
+    if (regla) {
+      contenidor.innerHTML = `
+        <h2><i class="bi ${regla.icona}"></i> ${regla.titol}</h2>
+        ${regla.parags.map(p => `<p>${p}</p>`).join('')}
+      `;
+    }
+    llista.forEach(d => d.classList.remove('vista'));
+    el.classList.add('vista');
+  });
+});
+
+
+  </script>
+</body>
+</html>

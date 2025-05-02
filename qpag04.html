@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso y Permisos · Atria-ERP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f0f4ff;
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+
+    .contenidor-general {
+      transition: transform 0.3s ease;
+    }
+
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      background: url("img/pag04_bn.png") no-repeat center right;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 5%;
+    }
+
+    .hero-banner h1 {
+      color: #060F7f;
+      font-size: 2.8rem;
+      margin-bottom: 2px;
+      text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-banner button {
+      background-color: #060F7f;
+      color: white;
+      border: none;
+      padding: 4px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 999px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .hero-banner button:hover {
+      background-color: #1e40af;
+      transform: scale(1.04);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+      z-index: 1000;
+    }
+
+    .nav-icons {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 16px;
+      font-size: 1.8rem;
+    }
+
+    .nav-icons a {
+      color: #060F7f;
+      text-decoration: none;
+    }
+
+    .nav-icons a:hover {
+      color: #1e40af;
+    }
+
+    .contenidor {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .contenidor p {
+      font-size: 1.1rem;
+      margin-bottom: 1.4em;
+      line-height: 1.6;
+    }
+
+	.Bloc {
+	  display: flex;
+	  justify-content: center;
+	  gap: 20px;
+	}
+
+	.Columna {
+	  width: 400px; 
+	  text-align: center;
+	  border: 3px solid #ccc; 
+	  padding: 10px;
+	  border-radius: 8px; 
+	  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+	}
+
+	.Columna img {
+	  width: 100%;
+	  height: auto;
+	  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+	}
+
+	.seccio-peu {
+	  background-color: #000;
+	  color: #fff;
+	  text-align: center;
+	  padding: 20px 40px;
+	  font-size: 1rem;
+	}
+	.seccio-peu p {
+	  margin: 4px 0;
+	  font-size: 1.1rem;
+	  font-weight: 500;
+	  letter-spacing: 0.5px;
+	}
+
+  </style>
+</head>
+<body>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="barra barra1"></div>
+    <div class="barra barra2"></div>
+    <div class="barra barra3"></div>
+  </div>
+
+  <div id="menu-container"></div>
+
+  <div class="contenidor-general" id="contenidorGeneral">
+    <section class="hero-banner">
+      <img src="img/logo.png" alt="Logo Atria" class="logo">
+      <h1>Acceso y Permisos</h1>
+      <p>Un entorno seguro, flexible y alineado con su arquitectura declarativa.</p>
+      <button onclick="obrirPitch()">Ver infografía</button>
+      <div class="nav-icons">
+        <a href="qpag03.html" title="Anterior"><i class="bi bi-arrow-left-circle"></i></a>
+        <a href="index.html" title="Inicio"><i class="bi bi-house"></i></a>
+        <a href="qpag05.html" title="Siguiente"><i class="bi bi-arrow-right-circle"></i></a>
+      </div>
+    </section>
+
+    <div class="contenidor">
+      <p>El componente especializado CPA (CheckPoint de Acceso) actúa como primer filtro de seguridad, antes de que el usuario acceda a cualquier funcionalidad del sistema. Se aplica permisos declarativos para regular la visibilidad y la acción sobre entidades, documentos y opciones.</p>
+	  <h4 style="text-align: center;">La CPA y los permisos son dos elementos independientes de la seguridad de la informació.</h4>
+		<div class="Bloc">
+			<div class="Columna">
+			  <img src="img/pag04_b1.png" alt="CPA">
+			  <h4>Control de Punto de Acceso</h4>
+			  <p>La CPA funciona de forma totalmente independiente de Atria-ERP Relational. Esta separación asegura que la identidad y los permisos del usuario se gestionan de forma estructurada, segura y sin exposición. Nunca se comunica directamente con el sistema, lo que garantiza que nunca viajan claves por la red. Su función es suministrar al usuario identificado una acreditación temporal de seguridad de un solo uso. Con esta acreditación, Atria-ERP Relational identifica al usuario de forma segura. La CPA cumple con las normativas de seguridad vigentes, como PSD2, eIDAS y ENISA.</p>
+			</div>
+			<div class="Columna">
+			  <img src="img/pag04_b2.png" alt="Permisos">
+			  <h4>Permisos en Atria-ERP Relational</h4>
+			  <p>Una vez identificado el usuario, Atria-ERP Relational aplica un sistema de permisos estructurado y declarativo. Cada permiso define de forma precisa qué entidades, documentos y acciones puede ver, modificar o transmitir el usuario. Los permisos no se gestionan mediante programación ni reglas ocultas: forman parte del repositorio estructural del sistema. Esto garantiza una gestión segura, trazable y coherente de los accesos en cualquier circunstancia. El acceso a la información en Atria-ERP Relational no depende de restricciones añadidas, sino de la propia arquitectura declarativa.</p>
+			</div>
+		</div>
+     </div>
+	<section class="seccio-peu"><p>© Atria-ERP 2025 · Versió 1.0.0 · Arquitectura Relacional</p></section> 
+</div>
+
+  <script>
+    function obrirPitch() {
+      alert("Aquí irá la infografía. Todavía no está disponible.");
+    }
+
+
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".col").forEach(col => observer.observe(col));
+  </script>
+  <script src="menu.js"></script>
+
+</body>
+</html>

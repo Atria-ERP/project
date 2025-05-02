@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Requisitos Técnicos · Atria-ERP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f0f4ff;
+      color: #1f2937;
+      overflow-x: hidden;
+    }
+    .contenidor-general { transition: transform 0.3s ease; }
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      background: url("img/pag05_bn.png") no-repeat center right;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 5%;
+    }
+    .hero-banner h1 {
+      color: #060F7f;
+      font-size: 2.8rem;
+      margin-bottom: 2px;
+      text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8);
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+    }
+    .hero-banner button {
+      background-color: #060F7f;
+      color: white;
+      border: none;
+      padding: 4px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 999px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease;
+    }
+    .hero-banner button:hover {
+      background-color: #1e40af;
+      transform: scale(1.04);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+      z-index: 1000;
+    }
+    .nav-icons {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 16px;
+      font-size: 1.8rem;
+    }
+    .nav-icons a {
+      color: #060F7f;
+      text-decoration: none;
+    }
+    .nav-icons a:hover {
+      color: #1e40af;
+    }
+    .contenidor {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .contenidor p {
+      font-size: 2rem;
+	  color: #1e3a8a;
+	  font-weight: 500;
+	  margin-bottom: 0;
+    }
+    
+    .cuadre-arq {
+	  position: relative;
+	  height: 500px;
+	  margin-top: 40px;
+	  margin-bottom: 60px;
+	  background-color: #aee3ef; /* color claret suau */
+	  border: 2px solid #c7d2fe; /* contorn subtil */
+	  border-radius: 30px;
+	  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+	  padding: 10px;
+	}
+    .cercle-arq {
+      position: absolute;
+      border: 2px solid #1e40af;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+ 	  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+     transition: box-shadow 0.3s ease;
+    }
+    .cercle-arq img {
+      height: 40px;
+      margin: 8px;
+    }
+    .titol-arq {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      color: #1e40af;
+      top: -40px;
+      font-size: 1.5rem;
+      padding: 2px 6px;
+      border-radius: 5px;
+    }
+    .cercle-db {
+      width: 240px;
+      height: 240px;
+      top: 60px;
+      left: 100px;
+      background: #e3e6c5;
+      z-index: 1;
+    }
+    .cercle-web {
+      width: 300px;
+      height: 300px;
+      top: 100px;
+      left: 260px;
+      background: #d4f0bf;
+      z-index: 2;
+    }
+    .cercle-nav {
+      width: 380px;
+      height: 380px;
+      top: 130px;
+      left: 440px;
+      background: #c5f2ea;
+      z-index: 3;
+    }
+
+	.contenidor-instancies {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  gap: 30px;
+	  margin-top: 20px;
+	  background-color: #eaf2ac;
+	  border: 2px solid #c7d2fe;
+	  border-radius: 20px;
+	  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+	  padding: 30px;
+	  flex-wrap: nowrap;
+	  overflow-x: auto;
+	  }
+
+	.bloc-instancia {
+	  background: #ffffff;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	  width: 260px;
+	}
+	.bloc-instancia h2 {
+	  color: #1e40af;
+	  margin-bottom: 10px;
+	  text-align: center;
+	}
+		
+	.llista-normal {
+	  margin-top: 30px;
+	  list-style-type: disc;
+	  font-size: 1.8rem;
+	  color: #1f2937;
+	  line-height: 1.2;
+	  background: #ffffff;
+	  padding: 20px 0px 20px 60px;
+	  border-radius: 10px;
+	  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+   }
+	
+	.seccio-peu {
+	  background-color: #000;
+	  color: #fff;
+	  text-align: center;
+	  padding: 20px 40px;
+	  font-size: 1rem;
+	}
+	.seccio-peu p {
+	  margin: 4px 0;
+	  font-size: 1.1rem;
+	  font-weight: 500;
+	  letter-spacing: 0.5px;
+	}
+
+  </style>
+</head>
+<body>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="barra barra1"></div>
+    <div class="barra barra2"></div>
+    <div class="barra barra3"></div>
+  </div>
+
+  <div id="menu-container"></div>
+
+
+  <div class="contenidor-general" id="contenidorGeneral">
+    <section class="hero-banner">
+      <img src="img/logo.png" alt="Logo Atria" class="logo">
+      <h1>Requisitos Técnicos</h1>
+      <p>El sistema no depende de frameworks pesados ni de motores de sesión.</p>
+      <button onclick="obrirPitch()">Ver infografía</button>
+      <div class="nav-icons">
+        <a href="qpag04.html" title="Anterior"><i class="bi bi-arrow-left-circle"></i></a>
+        <a href="index.html" title="Inicio"><i class="bi bi-house"></i></a>
+        <a href="qpag06.html" title="Siguiente"><i class="bi bi-arrow-right-circle"></i></a>
+     </div>
+    </section>
+
+    <div class="contenidor">
+      <h2 style="text-align:center; color:#060F7f; margin-bottom: 30px;">Requisitos Técnicos</h2>
+
+      <div class="cuadro-t fade-in">
+         <p>Para desplegar Atria-ERP se requiere:</p>
+
+		  <div class="cuadre-arq">
+
+			<div class="cercle-arq cercle-db">
+			  <div class="titol-arq">Base de datos SQL</div>
+			  <img src="img/logos/MySQL.png" style="position:absolute; left:80px; top:5px; width:100px; height:auto;">
+			  <img src="img/logos/PostgreSQL.png" style="position:absolute; left:20px; top:60px; width:130px; height:auto;">
+			  <img src="img/logos/sql_server.png" style="position:absolute; left:30px; top:90px; width:130px; height:auto;">
+			</div>
+
+			<div class="cercle-arq cercle-web">
+			  <div class="titol-arq">Web Server</div>
+				  <img src="img/logos/Apache.png" style="position:absolute; left:80px; top:10px; width:150px; height:auto;">
+				  <img src="img/logos/phyton.png" style="position:absolute; left:10px; top:90px; width:120px; height:auto;">
+				  <img src="img/logos/IIS.png" style="position:absolute; left:70px; top:200px; width:80px; height:auto;">
+			</div>
+
+			<div class="cercle-arq cercle-nav">
+			  <div class="titol-arq">Navegador Estándar</div>
+			  <img src="img/logos/chrome.png" style="position:absolute; left:150px; top:30px; width:80px; height:auto;">
+			  <img src="img/logos/Edge.png" style="position:absolute; left:260px; top:120px; width:80px; height:auto;">
+			  <img src="img/logos/FireFox.png" style="position:absolute; left:210px; top:230px; width:80px; height:auto;">
+			  <img src="img/logos/Brave.png" style="position:absolute; left:80px; top:230px; width:90px; height:auto;">
+			  <img src="img/logos/Safari.png" style="position:absolute; left:30px; top:120px; width:80px; height:auto;">
+	           	
+			</div>
+		  </div>
+	   </div>
+
+  
+
+      <div class="cuadro-t fade-in" style="margin-top: 50px;">
+        <p>Atria-ERP se adapta según la carga y la necesidad:</p>
+
+		<div class="contenidor-instancies">
+		  <div class="bloc-instancia">
+			<h2>Instancia Ligera</h2>
+			<p>1 CPU<br>2GB RAM<br>Hasta 20 usuarios simultáneos</p>
+		  </div>
+
+		  <div class="bloc-instancia">
+			<h2>Instancia Media</h2>
+			<p>2 CPU<br>4–8GB RAM<br>Hasta 100 usuarios activos</p>
+		  </div>
+
+		  <div class="bloc-instancia">
+			<h2>Instancia Grande</h2>
+			<p>4 CPU+<br>16GB+ RAM<br>Centenares de usuarios</p>
+		  </div>
+		</div>
+
+	  <ul class="llista-normal">
+        <li>Despliegue inmediato, sin frameworks pesados.</li>
+          <li>Escalabilidad real sin sobrecarga de servidor.</li>
+          <li>Costes técnicos y energéticos mínimos.</li>
+        </ul>
+      </div>
+
+     </div>
+	
+	<section class="seccio-peu"><p>© Atria-ERP 2025 · No recollim dades · Versió 1.0.0 · Arquitectura Relacional Efímera</p></section>
+
+ </div>
+
+  <script>
+    function obrirPitch() {
+      alert("Aquí irá la infografía. Todavía no está disponible.");
+    }
+  </script>
+  <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Atria-ERP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: sans-serif;
+    }
+
+    .hero {
+      width: 100%;
+      height: 600px;
+      background: url("img/Fons_Banner01.webp") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      padding-left: 5%;
+    }
+
+    .hero h1 {
+      position: absolute;
+      top: 40px;
+      white-space: nowrap;
+      text-shadow: 4px 4px 8px rgba(0, 0, 56, 0.5);
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 3rem;
+      margin: 0;
+      color: #060F7f;
+    }
+
+    .contenidor {
+      width: 60%;
+      margin-top: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contenidor img {
+      max-width: 500px;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    .contenidor p {
+      font-size: 1.8rem;
+      color: #222;
+      text-shadow: 2px 2px 4px rgba(0, 0, 20, 0.5);
+    }
+
+    .fons-seccio {
+      background-color: #F0F5FF;
+      padding: 60px 0;
+      width: 100%;
+    }
+
+    .quadricula {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+	.cuadro {
+	  width: 300px;
+	  height: 180px;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  text-align: center;
+	  border-radius: 20px;
+	  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	  font-size: 1.3rem;
+	  font-weight: bold;
+	  padding: 20px;
+	}
+
+
+    .titol {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .explicacio {
+      font-size: 0.9rem;
+      font-weight: normal;
+      line-height: 1.3;
+    }
+
+    .peu {
+      background-color: #1f2937;
+      color: #ccc;
+      padding: 40px 20px 20px;
+      font-size: 0.9rem;
+    }
+
+    .peu-contingut {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .peu-col {
+      min-width: 180px;
+      flex: 1;
+    }
+
+    .peu-col h4 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .peu-col a {
+      display: block;
+      color: #bbb;
+      text-decoration: none;
+      margin: 6px 0;
+    }
+
+    .peu-col a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .peu-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      color: #999;
+    }
+
+    .contenidor-general {
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="barra barra1"></div>
+    <div class="barra barra2"></div>
+    <div class="barra barra3"></div>
+  </div>
+
+  <div id="menu-container"></div>
+  
+  <div class="contenidor-general" id="contenidorGeneral">
+    <section class="hero">
+      <h1>Bienvenidos al mundo del ERP Relacional</h1>
+      <div class="contenidor">
+        <img src="img/logo.png" alt="Logo Atria-ERP">
+        <p>Ha nacido el ERP Relacional. El futuro ya es presente.</p>
+      </div>
+    </section>
+
+<section class="fons-seccio">
+  <div class="quadricula">
+    <div class="cuadro" style="background-color: #ffdddd;">
+      <a href="qpag01.html" style="text-decoration: none; color: inherit;">
+        <div class="titol">¿Qué es Atria-ERP Relational?</div>
+        <div class="explicacio">Un sistema relacional puro, sin código, basado en relaciones declaradas.</div>
+      </a>
+    </div>
+    <div class="cuadro" style="background-color: #ddffdd;">
+      <a href="qpag02.html" style="text-decoration: none; color: inherit;">
+        <div class="titol">Arquitectura y Diseño</div>
+        <div class="explicacio">Una plataforma estructural donde la relación y la declaración generan el comportamiento.</div>
+      </a>
+    </div>
+    <div class="cuadro" style="background-color: #ddeeff;">
+      <a href="qpag03.html" style="text-decoration: none; color: inherit;">
+        <div class="titol">ERP Relacional e Inteligencia Artificial</div>
+        <div class="explicacio">La IA deja de ser herramienta: es una asistente estructurada.</div>
+      </a>
+    </div>
+    <div class="cuadro" style="background-color: #fff0cc;">
+      <a href="qpag04.html" style="text-decoration: none; color: inherit;">
+        <div class="titol">Seguridad y Permisos</div>
+        <div class="explicacio">Un entorno seguro y flexible donde el acceso es parte nativa de la estructura.</div>
+      </a>
+    </div>
+    <div class="cuadro" style="background-color: #e0ccff;">
+      <a href="qpag05.html" style="text-decoration: none; color: inherit;">
+        <div class="titol">Infraestructura</div>
+        <div class="explicacio">Se redefine su uso: todo es efímero, ligero y escalable.</div>
+      </a>
+    </div>
+    <div class="cuadro" style="background-color: #ffd9cc;">
+      <a href="qpag07.html" style="text-decoration: none; color: inherit;">
+        <div class="titol">Reglas de Codd</div>
+        <div class="explicacio">De lo relacional en bases de datos... a lo relacional en la gestión.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <footer class="peu">
+      <div class="peu-contingut">
+        <div class="peu-col">
+          <h4>Contacte</h4>
+          <p>atriaerp.project@gmail.com</p>
+         
+        </div>
+        <div class="peu-col">
+          <h4>Enllaços útils</h4>
+          <a href="#">Documentació</a>
+          <a href="#">Preguntes freqüents</a>
+          <a href="#">Accés a col·laboradors</a>
+        </div>
+        <div class="peu-col">
+        </div>
+      </div>
+      <div class="peu-bottom">
+        <p>&copy; 2025 Atria-ERP · Tots els drets reservats</p>
+      </div>
+    </footer>
+  </div>
+
+ <script src="menu.js"></script>
+</body>
+</html>
