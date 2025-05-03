@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>¿Qué es un ERP Relacional?</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1rem;
+      background-color: #f8f9fa;
+      color: #222;
+      margin: 0;
+      padding: 2rem;
+    }
+    .contenedor {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      color: #ffffff;
+      background-color: #003366;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      border-radius: 6px;
+    }
+    h2 {
+      color: #004080;
+      margin-top: 2.5rem;
+      font-size: 1.5rem;
+      border-left: 4px solid #004080;
+      padding-left: 0.5rem;
+    }
+
+ul {
+  margin-left: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fdfdfd;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+    li {
+      margin: 0.6rem 0;
+    }
+    a {
+      color: #0055aa;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    p {
+      margin-top: 0.5rem;
+    }
+    .intro-metro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+    }
+    .intro-metro .textos {
+      flex: 1 1 55%;
+    }
+	.intro-metro .metro-img {
+	  margin-top: 1rem;
+	  flex: 1 1 40%;
+	  text-align: center;
+	}
+    .intro-metro .metro-img {
+      flex: 1 1 40%;
+      text-align: center;
+    }
+    .intro-metro .metro-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>¿Qué es un ERP Relacional?</h1>
+
+    <div class="intro-metro">
+      <div class="textos">
+        <p>Muchos sistemas se definen como “ERPs relacionales” simplemente porque utilizan una base de datos como PostgreSQL o MySQL. Pero eso no basta. El modelo relacional no es una cuestión de tecnología, sino de diseño, estructura y principios fundamentales.</p>
+
+        <p>Edgar F. Codd, creador del modelo relacional, estableció 13 reglas que todo sistema que se declare relacional debería cumplir. Estas reglas van mucho más allá del uso de una base de datos: definen la esencia del tratamiento de los datos como relaciones, el control mediante lenguajes declarativos y el acceso uniforme.</p>
+
+        <p>Muchos ERPs modernos, como Odoo, son modulares y extensibles, pero no cumplen estas reglas. Usan una base de datos relacional, sí, pero su estructura de datos es orientada a objetos, con capas intermedias de lógica de negocio que rompen el modelo declarativo y relacional puro.</p>
+      </div>
+
+      <div class="metro-img">
+         <img src="img/metro.webp" alt="Mapa relacional estilo metro">
+      </div>
+    </div>
+
+    <h2>¿Por qué Atria-ERP sí es relacional?</h2>
+
+    <ul>
+      <li>No tiene capas intermedias: la capa de construcción genera directamente SQLs y scripts de presentación.</li>
+      <li>Los datos son entidades y relaciones puras, sin objetos encapsulados ni serializaciones.</li>
+      <li>La lógica es declarativa: toda acción está descrita en datos, no en código.</li>
+      <li>La estructura se ajusta a las 13 reglas de Codd, documentadas <a href="qpag06.html" target="_blank">aquí</a>.</li>
+      <li>La gestión del sistema se realiza mediante tablas configurables, accesibles y auditables.</li>
+    </ul>
+
+    <p>Cuando decimos “relacional”, lo decimos con conocimiento y respeto por el modelo original. Atria-ERP Relational es un proyecto que lleva la palabra “relacional” en su sentido más puro, tal como lo concibió Codd: datos estructurados, consultables y gestionados desde una base unificada.</p>
+    <p>Otros sistemas pueden ser útiles, potentes o comerciales. Pero si hablamos de modelo relacional, Atria-ERP no solo cumple: lo demuestra.Como en su día el modelo relacional superó las limitaciones de las bases de datos jerárquicas, Atria-ERP representa una nueva ruptura con los esquemas tradicionales.</p>
+  </div>
+</body>
+</html>
