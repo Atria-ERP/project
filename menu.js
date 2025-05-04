@@ -32,6 +32,7 @@ document.body.appendChild(visor);
 
 // Funció per obrir el visor
 function obrirVisor(url, ample = "80%", alt = "80%", top = "10%", left = "10%") {
+  url = url + (url.includes("?") ? "&" : "?") + new Date().getTime();
   const contingut = document.getElementById("visorContingut");
   contingut.innerHTML = "";
 
