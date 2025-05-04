@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Atria-ERP Relational</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+			background-color: #f7f4f0;
+            color: #222;
+            padding-top: 110px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0e5c8d;
+            color: white;
+            padding: 0.8rem 2rem 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-top .title {
+            font-size: 1rem;
+        }
+        .language-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .language-buttons button {
+            background-color: white;
+            color: #0e5c8d;
+            border: none;
+            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .language-buttons button:hover {
+            background-color: #e0f0fb;
+        }
+        .header-bottom {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+          main {
+			max-width: 900px;
+			margin: 0 auto;
+			line-height: 1.6;
+			background-color: #f7f4f0;
+		  }
+
+		  .bloc {
+			background: #ffffff;
+			padding: 1.5rem;
+			margin: 2rem 0;
+			border-radius: 8px;
+			border: 1px solid #ccc;
+			box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+		  }
+ol {
+  background: #b0e8f8;
+  padding: 0.5rem 1.5rem;
+  margin: 0rem 5rem 0rem 5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+        .lang {
+            display: none;
+        }
+        .lang.active {
+            display: block;
+        }
+pre {
+  background: #f0f0f0;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #0e5c8d;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+}
+
+code {
+  background: none;
+  padding: 0;
+  border: none;
+}
+        h2, h3 {
+            color: #0e5c8d;
+        }
+.title {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+#capes, #paradigma {
+  display: none;
+}
+
+	.seccio-peu {
+	  background-color: #000;
+	  color: #fff;
+	  text-align: center;
+	  padding: 20px 40px;
+	  font-size: 1rem;
+	}
+	.seccio-peu p {
+	  margin: 4px 0;
+	  font-size: 1.1rem;
+	  font-weight: 500;
+	  letter-spacing: 0.5px;
+	}
+  </style>
+
+</head>
+<body>
+<header>
+<div class="header-top">
+<div class="title" id="header-title"></div>
+<div class="language-buttons">
+<button onclick="showLang('en')">English</button>
+<button onclick="showLang('es')">Español</button>
+</div>
+</div>
+<div class="header-bottom">Atria-ERP Relational</div>
+</header>
+<main>
+<div class="lang active">
+<div id="presentacio"></div>
+<div id="capes"></div>
+<div id="paradigma"></div>
+</div>
+</main>
+	<section class="seccio-peu"><p>© Atria-ERP 2025 · Versió 1.0.0 · Arquitectura Relacional</p></section>  </div>
+
+
+<script>
+  const textos = {
+    en: {
+      presentacio: `<h2>Atria-ERP Relational: A simpler and more natural management system</h2>
+<p><strong>Atria-ERP Relational</strong> is a system designed to organize and manage information in a clear and logical way, following how information works in the real world. Instead of relying on complicated code or rigid processes, it is based on simple structures, clear relationships, and a separation between "value" (the data itself) and "form" (how it is presented or used).</p>
+<h3>How does it work? A structure inspired by reality</h3>
+<p>Imagine a building with different floors: one for the interface (what you see), another for the processes (what the system does), and another for storing data (the base). Atria-ERP Relational uses this idea to keep everything organized. Each "floor" works independently, but they are all connected.</p>
+<h3>Meaningful data: structure and relationships</h3>
+<p>In Atria, data is not just numbers or words. It’s like puzzle pieces that have a shape (structure) and a place where they fit (relationships). For example:</p>
+<ul>
+<li>The columns of a table (like "name" or "price") define the structure.</li>
+<li>The rows (like "Ana, \$10") are the data that fill that structure.</li>
+</ul>
+<p>This allows the system to understand and manage information smoothly, even when the data changes.</p>
+<h3>Advantages of this approach:</h3>
+<ul>
+<li>You can work with constantly changing information without losing control.</li>
+<li>You don’t need to reprogram the system every time something changes.</li>
+</ul>
+<h3>Flows: each task in its place</h3>
+<p>Atria organizes information into separate "flows", like pipelines carrying different things:</p>
+<p>Each flow works independently, making the system more secure, easier to maintain, and adaptable.</p>
+<h3>Relational Management: a new approach</h3>
+<p>We call this Relational Management, a way to create systems where information is clear, well organized, and easy to use. This approach:</p>
+<ul>
+<li>Respects how data works in the real world.</li>
+<li>Follows the rules of the relational model (like a well-designed database).</li>
+<li>Adapts to any situation without needing to reprogram everything from scratch.</li>
+</ul>
+<h3>Conclusion</h3>
+<p><strong>Atria-ERP Relational</strong> is not just another program. It is a new way of thinking about management systems: simpler, more logical, and ready for the future.</p>`,
+      capes: ``,
+      paradigma: ``,
+	  titol:`Dissemination`
+    },
+    es: {
+      presentacio: `<h2>Atria-ERP Relacional: Un sistema de gestión más simple y natural</h2>
+<p><strong>Atria-ERP Relacional</strong> es un sistema diseñado para organizar y gestionar información de una manera clara y lógica, siguiendo cómo la información funciona en el mundo real. En lugar de depender de código complicado o procesos rígidos, se basa en estructuras sencillas, relaciones claras y una separación entre el "valor" (los datos en sí) y la "forma" (cómo se presentan o usan).</p>
+<h3>¿Cómo funciona? Una estructura inspirada en la realidad</h3>
+<p>Imagina un edificio con diferentes pisos: uno para la interfaz (lo que ves), otro para los procesos (lo que hace el sistema) y otro para guardar los datos (la base). Atria-ERP Relacional aprovecha esta idea para mantener todo organizado. Cada "piso" trabaja por su cuenta, pero todos están conectados.</p>
+<h3>Datos con sentido: estructura y relaciones</h3>
+<p>En Atria, los datos no son solo números o palabras. Son como piezas de un rompecabezas que tienen una forma (estructura) y un lugar donde encajan (relaciones). Por ejemplo:</p>
+<ul>
+<li>Las columnas de una tabla (como "nombre" o "precio") son la estructura.</li>
+<li>Las filas (como "Ana, \$10") son los datos que llenan esa estructura.</li>
+</ul>
+<p>Esto permite que el sistema entienda y maneje la información sin enredarse, incluso cuando los datos cambian.</p>
+<h3>Ventajas de este enfoque:</h3>
+<ul>
+<li>Puedes trabajar con información que cambia todo el tiempo sin perder el control.</li>
+<li>No necesitas reprogramar el sistema cada vez que algo cambia.</li>
+</ul>
+<h3>Flujos: cada tarea en su lugar</h3>
+<p>Atria organiza la información en "flujos" separados, como si fueran tuberías que llevan cosas diferentes:</p>
+<p>Cada flujo trabaja por su cuenta, lo que hace que el sistema sea más seguro, fácil de mantener y adaptable.</p>
+<h3>Gestión Relacional: un nuevo enfoque</h3>
+<p>Llamamos a esto Gestión Relacional, una forma de crear sistemas donde la información es clara, bien organizada y fácil de usar. Este enfoque:</p>
+<ul>
+<li>Respeta cómo funcionan los datos en el mundo real.</li>
+<li>Sigue las reglas del modelo relacional (como una base de datos bien diseñada).</li>
+<li>Se adapta a cualquier situación sin necesidad de programar todo desde cero.</li>
+</ul>
+<h3>Conclusión</h3>
+<p><strong>Atria-ERP Relacional</strong> no es solo otro programa. Es una nueva forma de pensar los sistemas de gestión, más simple, lógica y preparada para el futuro.</p>`,
+      capes: ``,
+      paradigma: ``,
+	  titol:`Divulgación`
+    }
+  };
+
+  function showLang(lang) {
+    document.getElementById("presentacio").innerHTML = textos[lang].presentacio;
+    document.getElementById("capes").innerHTML = textos[lang].capes;
+    document.getElementById("paradigma").innerHTML = textos[lang].paradigma;
+	document.getElementById("header-title").textContent = textos[lang].titol;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    ["presentacio", "capes", "paradigma"].forEach(id => {
+      document.getElementById(id).classList.add("bloc");
+    });
+    showLang('es');
+  });
+</script>
+
+</body>
+</html>

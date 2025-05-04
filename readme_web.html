@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Atria-ERP Relational</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+			background-color: #97c7f0;
+            color: #222;
+            padding-top: 110px;
+		}
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0e5c8d;
+            color: white;
+            padding: 0.8rem 2rem 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-top .title {
+            font-size: 1rem;
+        }
+        .language-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .language-buttons button {
+            background-color: white;
+            color: #0e5c8d;
+            border: none;
+            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .language-buttons button:hover {
+            background-color: #e0f0fb;
+        }
+        .header-bottom {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+          main {
+			max-width: 900px;
+			margin: 0 auto;
+			line-height: 1.6;
+			background-color: #97c7f0;
+		  }
+
+		  .bloc {
+			background: #ffffff;
+			padding: 1.5rem;
+			margin: 2rem 0;
+			border-radius: 8px;
+			border: 1px solid #ccc;
+			box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+		  }
+ol {
+  background: #f0f0ff;
+  padding: 0.5rem 1.5rem;
+  margin: 0rem 5rem 0rem 5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+        .lang {
+            display: none;
+        }
+        .lang.active {
+            display: block;
+        }
+pre {
+  background: #f0f0ff;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #0e5c8d;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+}
+
+code {
+  background: none;
+  padding: 0;
+  border: none;
+}
+        h2, h3 {
+            color: #0e5c8d;
+        }
+		
+.title {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+	.seccio-peu {
+	  background-color: #000;
+	  color: #fff;
+	  text-align: center;
+	  padding: 20px 40px;
+	  font-size: 1rem;
+	}
+	.seccio-peu p {
+	  margin: 4px 0;
+	  font-size: 1.1rem;
+	  font-weight: 500;
+	  letter-spacing: 0.5px;
+	}
+ </style>
+
+</head>
+<body>
+<header>
+<div class="header-top">
+<div class="title" id="header-title"></div>
+<div class="language-buttons">
+<button onclick="showLang('en')">English</button>
+<button onclick="showLang('es')">Español</button>
+</div>
+</div>
+<div class="header-bottom">Atria-ERP Relational</div>
+</header>
+<main>
+<div class="lang active">
+<div id="presentacio"></div>
+<div id="capes"></div>
+<div id="paradigma"></div>
+</div>
+</main>
+	<section class="seccio-peu"><p>© Atria-ERP 2025 · Versió 1.0.0 · Arquitectura Relacional</p></section>  </div>
+
+
+<script>
+  const textos = {
+    en: {
+      presentacio: `
+<p><strong>Atria-ERP Relational</strong> is a project aimed at addressing the structural limitations of many current ERPs. We are not trying to compete with anyone, but rather to explore a new way of building applications.</p>
+<p>Traditionally, when developing a management application like an ERP, a scheme based on the definition and creation of objects is usually followed:</p>
+<ol>
+<li>Define entity-objects such as clients, invoices, products, etc., as classes or models.</li>
+<li>Program the business layer within those classes or in separate layers.</li>
+<li>Build a user interface with forms, buttons and views.</li>
+<li>Link everything through routes, controllers and actions defined in the business logic.</li>
+<li>Manage permissions and validations scattered across code layers.</li>
+</ol>
+<p>This approach, based on describing behaviors through objects, remains the most common in many development environments.</p>
+<p>With <strong>Atria-ERP Relational</strong>, we want to explore a model focused on <strong>information</strong>, not behavior. This means reversing the process: instead of defining paths to access the information, we define the information so it generates the paths.</p>
+<p>It may seem unusual, but it’s the same logic that transformed hierarchical databases. These defined fixed routes to access data. The relational model reversed this: it defined the data and their relationships, and the routes were generated automatically.</p>
+<p>Our project is based on this idea: to create a relational ERP model where behaviors are generated from the definition of information.</p>
+<p>The project started as a way to optimize resources, but naturally evolved into a declarative, relational model that complies with Codd’s 13 rules <strong>without depending on database engines</strong>.</p>
+`,
+      capes: `<h3>Layered Architecture</h3>
+<p>To implement this model, we had to redefine the role and operation of the three layers of typical internet-based architecture: <strong>Data</strong>, <strong>Business</strong>, and <strong>Interface</strong>, as known in traditional development.</p>
+<p>- The <strong>Data layer</strong> not only provides database information but also processes and supplies fully resolved data.</p>
+<p>- The <strong>Business layer</strong> no longer contains workflows or centralized logic. It becomes a distribution layer that adapts information and structure based on declarations and requests, all at runtime instead of design time.</p>
+<p>- The <strong>User Interface</strong> becomes a control and editing console, taking over functions usually handled by the ORM.</p>
+<p>In this configuration, the layers become autonomous in their role, reducing network traffic. This autonomy allows operation without open instances or intermediate layers, optimizing resource usage.</p>
+`,
+      paradigma: `<h3>Paradigm Shift</h3>
+<p>The main challenge is the paradigm shift: moving from <strong>workflows</strong> to <strong>relationships</strong>. In a workflow-based design, the "client" entity is defined as an object or a property of an object. In contrast, in a relational model, the "client" condition is a <strong>role</strong> defined in a relationship, which emerges automatically.</p>
+<p>The client definition, for example, is established with:</p>
+<pre><code>FROM Facturas F LEFT JOIN Personas P ON F.PersonaID = P.ID
+<p></p></code></pre>
+<p>We also replace <strong>conditions</strong> with <strong>calculations</strong>. In a traditional model, you might write:</p>
+<pre><code>CampoR.Value = (Status === 1 ? CampoA.Value : CampoB.Value);
+<p></p></code></pre>
+<p>We define it declaratively as:</p>
+<pre><code>CampoR.ValueSource = Status * CampoA.Value + (1 - Status) * CampoB.Value
+<p></p></code></pre>
+<p>And this operation is entirely executed in the data layer.</p>
+`,
+titol: `The Relational ERP is born.`	
+    },
+    es: {
+      presentacio: `
+<p><strong>Atria-ERP Relacional</strong> es un proyecto que busca abordar las limitaciones estructurales de muchos ERP actuales. No pretendemos competir con nadie, sino explorar una nueva forma de construir aplicaciones.</p>
+<p>Tradicionalmente, para desarrollar una aplicación de gestión como un ERP, suele seguirse un esquema basado en la definición y creación de objetos:</p>
+<ol>
+<li>Definir entidades-objeto como clientes, facturas, productos, etc., como clases o modelos.</li>
+<li>Programar la capa de negocio dentro de estas clases o en capas separadas.</li>
+<li>Construir una interfaz de usuario con formularios, botones y vistas.</li>
+<li>Enlazarlo todo mediante rutas, controladores y acciones definidas en la lógica de negocio.</li>
+<li>Gestionar permisos y validaciones de forma dispersa dentro de las capas de código.</li>
+</ol>
+<p>Este enfoque, basado en describir comportamientos mediante objetos, sigue siendo el más habitual en muchos entornos de desarrollo.</p>
+<p>Con <strong>Atria-ERP Relational</strong>, queremos explorar un modelo centrado en la información, no en el comportamiento. Esto implica invertir el proceso: en lugar de definir caminos para acceder a la información, definimos la información para que genere los caminos.</p>
+<p>Puede parecer inusual, pero es la misma lógica que transformó las bases de datos jerárquicas. Estas definían recorridos fijos para acceder a los datos. Con el modelo relacional, se invirtió el planteamiento: se definían los datos y sus relaciones, y los recorridos se generaban automáticamente.</p>
+<p>Nuestro proyecto se basa en esta idea: crear un modelo de ERP relacional donde, a partir de la definición de la información, se generen los comportamientos.</p>
+<p>El proyecto nació como una forma de optimizar recursos, pero evolucionó de forma natural hacia un modelo declarativo y relacional, el cual cumple las 13 reglas de Codd <strong>sin depender de los motores de bases de datos</strong>.</p>
+`,
+      capes: `<h3>Arquitectura en capas</h3>
+<p>Para implementar este modelo, hemos redefinido la función y el funcionamiento de las tres capas de la arquitectura de distribución por internet: <strong>Datos</strong>, <strong>Negocio</strong> e <strong>Interfaz</strong>, tal como se conocen en los desarrollos tradicionales.</p>
+<p>- La capa de <strong>Datos</strong> no solo proporciona la información de la base de datos, sino que también la procesa y suministra todos los datos ya resueltos.</p>
+<p>- La capa de <strong>Negocio</strong> deja de contener flujos de trabajo y de centralizar la lógica operacional. Se convierte en una capa de distribución que adapta la información y la estructura según las declaraciones y las peticiones, todo en tiempo de ejecución y no en tiempo de diseño.</p>
+<p>- La <strong>Interfaz de Usuario</strong> se transforma en una consola de control y edición, asumiendo funciones que normalmente se delegan al ORM.</p>
+<p>Con esta nueva configuración, las capas se vuelven autónomas en su función, reduciendo el tráfico en la red. Esta autonomía permite trabajar sin instancias abiertas ni capas intermedias, optimizando el uso de recursos.</p>
+`,
+      paradigma: `<h3>Cambio de paradigma</h3>
+<p>El principal desafío es el cambio de paradigma: pasar de los *workflows* a las relaciones. En un diseño basado en workflows, la entidad “cliente” se define como un objeto o como propiedad de un objeto. En cambio, en un modelo relacional, la condición de “cliente” es un <strong>rol</strong> definido en una relación, que emerge de forma automática.</p>
+<p>La definición de cliente se establece, por ejemplo, con:</p>
+<pre><code>FROM Facturas F LEFT JOIN Personas P ON F.PersonaID = P.ID
+</code></pre>
+<p>También cambiamos el uso de <strong>condiciones</strong> por <strong>cálculos</strong>. En un modelo tradicional, escribiríamos en la capa de negocio:</p>
+<pre><code>CampoR.Valor = (Estatus === 1 ? CampoA.Valor : CampoB.Valor);
+</code></pre>
+<p>Nosotros lo definimos como una propiedad declarativa:</p>
+<pre><code>CampoR.OrigenValor = Estatus * CampoA.Valor + (1 - Estatus) * CampoB.Valor
+</code></pre>
+<p>Y esta operación se ejecuta íntegramente en la capa de datos.</p>
+`,
+	titol:`Nace el ERP Relacional.`
+    }
+  };
+
+  function showLang(lang) {
+    document.getElementById("presentacio").innerHTML = textos[lang].presentacio;
+    document.getElementById("capes").innerHTML = textos[lang].capes;
+    document.getElementById("paradigma").innerHTML = textos[lang].paradigma;
+	document.getElementById("header-title").textContent = textos[lang].titol;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    ["presentacio", "capes", "paradigma"].forEach(id => {
+      document.getElementById(id).classList.add("bloc");
+    });
+    showLang('es');
+  });
+</script>
+
+</body>
+</html>
